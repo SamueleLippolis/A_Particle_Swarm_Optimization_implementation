@@ -7,8 +7,8 @@ The code we did (I use "we" since the professor Eric Medvet helped me) has a mea
 However, I reported here the isolated code we did in the folder "code".
 
 ## The main pdf file
-The main file is \\
-GMO_project___A_PSO_implementation_on_GJEA___Samuele_Lippolis-1.pdf \\
+The main file is 
+* GMO_project___A_PSO_implementation_on_GJEA___Samuele_Lippolis-1.pdf 
 in which I reported all the information about the project.
 
 ## The folders
