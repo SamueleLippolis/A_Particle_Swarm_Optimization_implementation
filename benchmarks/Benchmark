@@ -1,0 +1,58 @@
+ea.experiment(
+  runs = (randomGenerator = (seed = [1:1:10]) * [ea.rg.defaultRG()]) *
+    (problem = (p = [10]) * [
+      ea.p.s.ackley();
+      ea.p.s.sphere();
+      ea.p.s.pointAiming();  
+      ea.p.s.circularPointsAiming();
+      ea.p.s.rastrigin()
+    ]) *
+    (solver = (nEval = [2000]) * [
+      ea.s.cmaEs(mapper = ea.m.identity());      
+      ea.s.doubleStringGa(mapper = ea.m.identity());
+      ea.s.pso(mapper = ea.m.identity(); nPop = 63; w = 0.6571; phiParticle = 1.6319; phiGlobal = 0.6239  );
+      ea.s.simpleEs(mapper = ea.m.identity());
+      ea.s.differentialEvolution(mapper = ea.m.identity())
+    ]) * [
+    ea.run()
+  ];
+  listeners = [
+  
+    ea.l.console(
+    
+      functions = [
+        ea.nf.size(f = ea.nf.genotype(individual = ea.nf.best()); s = "%3d");
+        ea.nf.fitness(individual = ea.nf.best(); s = "%6.2f");
+        ea.nf.hist(collection = ea.nf.each(map = ea.nf.fitness(); collection = ea.nf.all()))
+      ];
+      
+      runKeys = [
+        ea.misc.sEntry(key = "problem.name"; value = "{problem:%#s}");
+        ea.misc.sEntry(key = "problem.p"; value = "{problem.p}");
+        ea.misc.sEntry(key = "solver"; value = "{solver:%#s}")
+      ]
+    );
+      
+      ea.l.bestCsv(
+      filePath = "/home/samuele/Desktop/University/22_thesis/pso/CSVs/data_dim10_opt.csv";
+      functions = [
+        ea.nf.fitness(individual = ea.nf.best(); s = "%6.2f")
+      ];
+
+      runKeys = [
+        ea.misc.sEntry(key = "problem.name"; value = "{problem:%#s}");
+        ea.misc.sEntry(key = "problem.p"; value = "{problem.p}");
+        ea.misc.sEntry(key = "solver"; value = "{solver:%#s}")
+      ]
+    );
+    
+    ea.l.expPlotSaver(
+      filePath = "/home/samuele/Desktop/University/22_thesis/pso/plots/plot_dim10_opt.png";
+      freeScales = true;
+      plot = ea.plot.fitnessPlotMatrix(
+        xSubplotRunKey = ea.misc.sEntry(key = p; value = "{problem.p}");
+        ySubplotRunKey = ea.misc.sEntry(key = problem; value = "{problem:%#s}")
+      )
+    )
+  ]
+)
