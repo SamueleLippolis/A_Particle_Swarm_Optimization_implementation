@@ -558,6 +558,7 @@
    // pso is a method to construct an instance of the PArticleSwarmOptimization class
    // It allows to specify all the needed parameters
    // It returns a function that can be used to build ParticleSwarmOptimization instances (with the space of the solution S and quality space Q)
+   // By defualt, it chooses standard paramters that are a "good enough default choice"
    @SuppressWarnings("unused")
    public static <S, Q> Function<S, ParticleSwarmOptimization<S, Q>> pso(
        @Param(value = "mapper") InvertibleMapper<List<Double>, S> mapper,

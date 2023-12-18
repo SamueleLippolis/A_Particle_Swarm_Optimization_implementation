@@ -12,6 +12,8 @@ The main file is the pdf in which I reported all the information about the proje
 ## The folders
 ### code
 The code we did.
+* ParticleSwarmOptimization: proper class where I store all the information related to the implementation of PSO
+* Solvers: here there are a lot of (not commented, previous implemented) constructurs. The only that regards the project is the "pso" construct. 
 ### benchmarks 
 The benchmark I did. 
 Here I put only one benchmark, but with slightly modification it can be used for all the simulations I did.
