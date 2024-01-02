@@ -1,8 +1,8 @@
 # GMO_exam
-Repository where I store all the used files for the GMO exam.
+Repository where I store all the used files for the Global and Multi-Object project. I implemented the Particle Swarm Optimization algorithm (an optimization heuristic) in the optimization framework JGEA. 
 
 ## Important remark
-My project consists in implementing the PSO method on the framework JGEA. 
+My project consists in implementing Particle Swarm Optimization (PSO) method on the framework JGEA. 
 The code we did (I use "we" since the professor Eric Medvet helped me) has a meaning if it is within JGEA.
 However, I reported here the isolated code we did in the folder "code".
 
