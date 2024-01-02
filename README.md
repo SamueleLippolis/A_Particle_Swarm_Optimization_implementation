@@ -1,4 +1,4 @@
-# GMO_exam
+# An_Particle_Swarm_Optimization_implementation
 Repository where I store all the used files for the Global and Multi-Object project. I implemented the Particle Swarm Optimization algorithm (an optimization heuristic) in the optimization framework JGEA. 
 
 ## Important remark
